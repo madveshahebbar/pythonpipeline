@@ -2,13 +2,14 @@ pipeline {
   agent none
   stages {
     stage('Build') {
-      steps {
-	    agent {
+        agent {
             dockerfile {
                 filename ‘Dockerfile.centos’
 						}
+		steps {
+		      sh ' --version'
+			  }
             }
         }	
       }
     }
-}
