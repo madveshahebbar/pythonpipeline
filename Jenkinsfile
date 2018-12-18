@@ -1,12 +1,14 @@
 pipeline {
-    agent none
-    stage {
-        stage('Build') {
-            agent {
-                dockerfile {
-                         filename ‘Dockerfile.centos’
-						 }
-                 	}
-                }
+  agent none
+  stages {
+    stage('Build') {
+      steps {
+	    agent {
+            dockerfile {
+                filename ‘Dockerfile.centos’
+						}
             }
-        }
+        }	
+      }
+    }
+}
